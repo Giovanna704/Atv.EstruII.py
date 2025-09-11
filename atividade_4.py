@@ -1,9 +1,7 @@
 import random
 from graphviz import Digraph
 
-# -----------------------------
 # Classe Nó da AVL
-# -----------------------------
 class Node:
     def __init__(self, key):
         self.key = key
@@ -11,10 +9,7 @@ class Node:
         self.right = None
         self.height = 1
 
-
-# -----------------------------
 # Classe AVL Tree
-# -----------------------------
 class AVLTree:
     def __init__(self):
         self.root = None
@@ -74,9 +69,9 @@ class AVLTree:
     def insert_key(self, key):
         self.root = self.insert(self.root, key)
 
-    # -----------------------------
+
     # Visualização com Graphviz
-    # -----------------------------
+
     def export_graphviz(self, filename="avl_tree"):
         dot = Digraph(comment="Árvore AVL", format="png")
         dot.attr('node', shape='circle', style="filled", color="lightblue", fontname="Helvetica")
@@ -92,11 +87,9 @@ class AVLTree:
                     add_nodes_edges(node.right)
 
         add_nodes_edges(self.root)
-        dot.render(filename, view=True)  # gera arquivo PNG e abre
+        dot.render(filename, view=True) 
 
-# -----------------------------
 # Demonstração
-# -----------------------------
 if __name__ == "__main__":
     print("\n=== Demonstração com valores fixos (rotações) ===")
 
